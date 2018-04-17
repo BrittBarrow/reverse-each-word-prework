@@ -4,16 +4,12 @@
   #return new_string.join("")
 #end
 
-#def reverse_each_word(string)
-  #new_string = string.split("")
-  #new_string.reverse_each {|x|}
-  #puts new_string
-#end
-
-def reverse_each_word(string)
-  new_array = string.split(" ")
-  new_array.collect do |elements|
-    elements.reverse!
-  end
-  return new_array.join(" ")
+def reverse_each_word(sentence)
+  sentence.split.collect {|word| word.reverse}.join(" ")
 end
+
+# Without iterating:
+
+# def reverse_each_word(sentence)
+#  sentence.reverse.split.reverse.join(" ")
+# end
